@@ -28,6 +28,9 @@
 (setq sr-speedbar-right-side nil)
 (setq sr-speedbar-refresh nil)
 
+;; F8 to open speedbar
+(global-set-key [f8] 'sr-speedbar-open)
+
 ;; Set custom theme
 (load-file "~/.live-packs/forrest-pack/themes/cyberpunk.el")
 (color-theme-cyberpunk)
@@ -59,9 +62,7 @@
 
 ;; Powerline setup
 (require 'powerline)
-(powerline-default-theme)
-
-(require 'nyan-mode)
+(powerline-vim-theme)
 
 (require 'linum+)
 (global-linum-mode 1)
@@ -73,6 +74,9 @@
 (add-hook 'c-mode-hook 'hs-minor-mode)
 (add-hook 'js2-mode-hook 'hs-minor-mode)
 (add-hook 'python-mode-hook 'hs-minor-mode)
+
+(eval-after-load "go-mode"
+  '(require 'flymake-go))
 
 ;; Set left fringe to 8px
 (fringe-mode '(8 . 0))

@@ -31,6 +31,9 @@
 ;; F8 to open speedbar
 (global-set-key [f8] 'sr-speedbar-open)
 
+;; F9 to open recentf-open-files menu
+(global-set-key [f9] 'recentf-open-files)
+
 ;; Set custom theme
 (load-file "~/.live-packs/forrest-pack/themes/cyberpunk.el")
 (color-theme-cyberpunk)

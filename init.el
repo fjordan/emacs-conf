@@ -26,7 +26,7 @@
 (setq speedbar-use-images nil)
 (setq speedbar-show-unknown-files t)
 (setq sr-speedbar-right-side nil)
-(setq sr-speedbar-refresh nil)
+(setq sr-speedbar-auto-refresh nil)
 
 ;; F8 to open speedbar
 (global-set-key [f8] 'sr-speedbar-open)

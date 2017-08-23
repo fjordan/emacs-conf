@@ -96,8 +96,21 @@
 ;; Disable tabs
 (setq-default indent-tabs-mode nil)
 
-;; Set js2-mode to 2-spaces for offset
+;; Set golang tabwidth to 4 and gofmt before save
+(add-hook 'go-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            (setq tab-width 4)
+            (setq indent-tabs-mode 1)))
+
+(setq tab-always-indent 'complete)
+
+;; ;; Set js2-mode to 2-spaces for offset
 (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 
 ;; Decrease rendering frequency for performance
 (setq redisplay-dont-pause t)
+
+;; Enable elpy for Python editing
+(package-initialize)
+(elpy-enable)
